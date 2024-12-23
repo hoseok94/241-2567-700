@@ -1,3 +1,50 @@
+const BASE_URL = 'http://localhost:8000'; 
+let mod = 'CREATE'
+let selectedId = ''
+window.onload = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id')
+    console.log('id',id)
+    if(id){
+        mod = 'EDIT'
+        selectedId = id
+
+        //1. ดึงข้อมูลของ user ที่ต้องการแก้ไข
+        try {
+            const response = await axios.get(`${BASE_URl}/users/${id}`)
+            console.log('data',response.data)
+            
+        //2. นำข้อมูลของ user ใส่ใน input ที่มี
+            let firstNameDOM = document.querySelector('input[name=firstname]');
+            let lastNameDOM = document.querySelector('input[name=lastname]');
+            let ageDOM = document.querySelector('input[name=age]');
+            let genderDOM = document.querySelector('input[name=gender]:checked') || null;
+            let interestDOM = document.querySelectorAll('input[name=interest]:checked') || [];
+            let descriptionDOM = document.querySelector('textarea[name=description]');
+
+            firstNameDOM.value = user.firstname
+            lastNameDOM.value = user.lastname
+            ageDOM.value = user.age
+            descriptionDOM.value = user.description
+
+            let genderDOMs = document.querySelectorAll('input[name-gender]')
+            let interestDOMs = document.querySelectorAll('input[name=interest]')
+
+            for (let i =0; i < genderDOMs.length; i++){
+                if(genderDOMs[i].value == user.gender){
+                    genderDOMs[i].checked = true
+                }
+            }
+            for (let i =0; i < interestDOMs.length; i++){
+                if(user.interests.includes(interestDOMs[i].value)){
+                    interestDOMs[i].checked = true
+                }
+            }
+        } catch (error) {
+            console.log('error',error)
+        }
+    }
+}
 const validateData = (userData) => {
     let errors = [];
     if (!userData.firstName) {
@@ -23,7 +70,7 @@ const submitData = async () => {
     let lastNameDOM = document.querySelector('input[name=lastname]');
     let ageDOM = document.querySelector('input[name=age]');
     let genderDOM = document.querySelector('input[name=gender]:checked') || null;
-    let interestDOMs = document.querySelectorAll('input[name=interest]:checked') || [];
+    let interestDOM = document.querySelectorAll('input[name=interest]:checked') || [];
     let descriptionDOM = document.querySelector('textarea[name=description]');
     let messageDOM = document.getElementById('message');
     
@@ -54,9 +101,14 @@ const submitData = async () => {
                 errors: errors
             };
         }
-
-        const response = await axios.post('http://localhost:8000/users', userData);
+    if (mod == 'CREATE') {
+        const response = await axios.post('${BASE_URL}/users', userData);
         console.log('response', response.data);
+    } else {
+        const response = await axios.post('${BASE_URL}/users/${selectedID}', userData);
+        message = 'แก้ไขข้อมูลเรียบร้อย'
+        console.log('response',response.data)
+    }
 
         messageDOM.innerText = 'บันทึกข้อมูลเรียบร้อย';
         messageDOM.className = 'message success';
@@ -76,7 +128,7 @@ const submitData = async () => {
         htmlData += '<div>' + error.message + '</div>';
         htmlData += '<ul>';
         
-        for (let i = 0; i < error.errors.length; i++) {
+        for (let i = 0 ; i < error.errors.length; i++) {
             htmlData += '<li>' + error.errors[i] + '</li>';
         }
         htmlData += '</ul>';
