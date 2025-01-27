@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,4 +26,33 @@
     }
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gender" value="ชาย" onchange="ChangeGender()">ชาย
+    <input type="radio" name="gender" value="หญิง" onchange="ChangeGender()">หญิง
+    <input type="radio" name="gender" value="อื่นๆ" onchange="ChangeGender()">อื่นๆ
+
+    <script>
+    function ChangeGender(){
+        //เลือก gender ที่มี input ทั้งหมด ออกมา
+        let genderInputs = document.querySelectorAll('input[name=gender]');
+        let gender = '';
+        //ใครมี checked ให้เอา value ออกมา (เพศที่ถูกเลือก)
+        for (let i = 0; i < genderInputs.length; i++) {
+            if(genderInputs[i].checked){
+                gender = genderInputs[i].value;
+            }
+        }
+        console.log('selected gender', gender);
+    }
+    </script>
+</body>
+>>>>>>> 2deefe5 (Add files via upload)
 </html>
