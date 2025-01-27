@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     u1{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .desktop u1 {
+        display: flex;
+      }
+      .desktop u1 > li {
+        margin-right: 20px;
+      }
+      .Mobile-Menu,
+      .mobile {
+        display: none;
+      }
+      @media screen and (max-width: 768px) {
+        .desktop {
+          display: none;
+        }
+        .Mobile-Menu {
+          display: block;
+        }
+        .Mobile-Menu:hover + .mobile {
+          display: block;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="desktop">
+    <u1>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </u1>
+  </div>
+  <div class="Mobile-Menu">Menu</div>
+  <div class="mobile">
+    <u1>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </u1>
+</body>
+</html>

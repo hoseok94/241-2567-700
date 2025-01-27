@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div
+    onmouseover="overtime()"
+    onmouseup="uptime()"
+    onmousedown="click()"
+    >click here</div>
+
+    <script>
+        // ฟังก์ชันนี้จะถูกเรียกเมื่อมีการเลื่อนเมาส์ไปบนองค์ประกอบที่ถูกผูกกับฟังก์ชันนี้
+        function overtime () {
+            console.log('mouse over') 
+        }
+
+        // ฟังก์ชันนี้จะถูกเรียกเมื่อมีการปล่อยปุ่มเมาส์บนองค์ประกอบที่ถูกผูกกับฟังก์ชันนี้
+        function uptime () {
+            console.log('mouse up')
+        }
+
+        // ฟังก์ชันนี้จะถูกเรียกเมื่อมีการกดปุ่มเมาส์บนองค์ประกอบที่ถูกผูกกับฟังก์ชันนี้
+        function downtime () {
+            console.log('mouse down')
+        }        
+</script>
+</body>
+</html>
