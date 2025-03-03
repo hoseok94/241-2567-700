@@ -1,43 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--ส่วนนี้ไม่แสดงออกไปที่หน้าจอของ browser -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      @font-face {
+        font-family: 'Kanit' ;
+        src: url('./Kanit/Kanit-Regular.ttf');
+      }
+      body{
+        font-family: 'Kanit';
+        font-size: 14px;
+      }
+      .container {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+      }
+      .header {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+        background-color: lightsalmon;
+      }
+      .header-form {
+        width: 100px;
+        background-color: blanchedalmond;
+      }
+      .flex {
+        display: flex;
+      }
+      .form-input {
+        margin-bottom: 5px;
+      }
+      input.form, textarea {
+        border: 1px solid #ccc ;
+        width: 100%;
+      }
+      .center {
+        text-align: center;
+      }
+      .button {
+        border: 0;
+        width: 30%;
+        height: 50px;
+        background-color: rgb(210,129,64);
+      }
+      .button:hover {
+        background-color: rgb(230,205,174);
+      }
+    </style>
 </head>
 <body>
  <!--form-->
- <h1>Register form</h1>
- ชื่อ <input type="text">
- นามสกุล <input type="text"> <br>
- อายุ <input type="text" min="0" max="100">
- <div>
-    เพศ
-    <div>
-        <input name="gender" type="redio">ชาย
+    <div class="container">
+        <div class="header"> Register form </div>
+        <div>
+            <div class="flex form-input">
+            <div class="header-form">ชื่อ</div>
+            <input class="form"type="text">
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">นามสกุล</div>
+            <input class="form"type="text">    
+        </div>
+        <div>
+        <div class="flex form-input">
+            <div class="header-form">อายุ</div>
+            <input class="form"type="number"min="0" max="100">  
+        </div>
+        <div class="flex gender form-input">
+            <div class="header-form">เพศ</div>
+            <div>
+                <input name="gender" type="redio">ชาย
+                <input name="gender" type="redio">หญฺิง
+                <input name="gender" type="redio">อื่นๆ
+            </div>
+           </div>  
+        <div class="form-input">
+            <div class ="header-form">งานอดิเรก</div>
+            <div>
+                <input name="hobby" type="checkbox">อ่านหนังสือ
+            <div>
+                <input name="hobby" type="checkbox">ดูหนัง
+            </div>
+            <div>
+                <input name="hobby" type="checkbox">ฟังเพลง
+            </div>
+            <div>
+                <input name="hobby" type="checkbox">เล่นเกม
+            </div>
+        </div>
+        <div class="header-form">คำอธิบาย</div>
+            <textarea></textarea>
+        </div>
+        <div class="center">
+            <button class="button">ส่งข้อมูล</button>
+        </div>
     </div>
-    <div>
-        <input name="gender" type="redio">หญฺิง
-    </div>
-    <div>
-        <input name="gender" type="redio">อื่นๆ
-    </div>
- </div>  
- <div>
-    งานอดิเรก
-    <div>
-        <input name="hobby" type="checkbox">อ่านหนังสือ
-    <div>
-        <input name="hobby" type="checkbox">ดูหนัง
-    </div>
-    <div>
-        <input name="hobby" type="checkbox">ฟังเพลง
-    </div>
- </div>
- <div>
-    คำอธิบาย
-    <textarea></textarea>
- </div>
-    <button>ส่งข้อมูล</button>
 </body>
 </html>
