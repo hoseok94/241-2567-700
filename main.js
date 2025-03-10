@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 //string ,number ,booliean Object , array
 /*
 //string
