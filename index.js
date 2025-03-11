@@ -79,15 +79,7 @@ const submitData = async () => {
     let messageDOM = document.getElementById('message');
     
     try {
-        // ตรวจสอบว่า gender ถูกเลือก
-        if (!genderDOM) {
-            throw {
-                message: 'กรุณาเลือกเพศ',
-                errors: ['กรุณาเลือกเพศ']
-            };
-        }
-
-        // Prepare data
+        
         let interests = '';
         for (let i = 0; i < interestDOM.length; i++) {
             interests += interestDOM[i].value;
