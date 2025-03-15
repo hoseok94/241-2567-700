@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="user.html">Go to User Management</a>
+    <a href="user.html" class="back-btn">Go to User Management</a>
     <div class="container">
       <div class="header">
           Register Form
@@ -39,23 +39,30 @@
           </div>
       </div>
       <div class="form-input">
-          <div class="header-form">งานอดิเรก</div>
-          <div>
-              <input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
-          </div>
-          <div>
-              <input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง
-          </div>
-          <div>
-              <input name="interest" type="checkbox" value="ฟังเพลง"> ฟังเพลง
-          </div>
-      </div>
+        <div class="header-form">งานอดิเรก</div>
+        
+        <div class="checkbox-container">
+            <input id="book" name="interest" type="checkbox" value="อ่านหนังสือ">
+            <label for="book">อ่านหนังสือ</label>
+        </div>
+    
+        <div class="checkbox-container">
+            <input id="movie" name="interest" type="checkbox" value="ดูหนัง">
+            <label for="movie">ดูหนัง</label>
+        </div>
+    
+        <div class="checkbox-container">
+            <input id="music" name="interest" type="checkbox" value="ฟังเพลง">
+            <label for="music">ฟังเพลง</label>
+        </div>
+    </div>
+    
       <div class="form-input">
         <div class="header-form">คำอธิบาย</div>
           <textarea name="description"></textarea>
       </div>
 
-      <div id= message class="message"></div>
+      <div id="message" class="message"></div>
       
       <div class="center">
           <button onclick="submitData()" class="button">ส่งข้อมูล</button>

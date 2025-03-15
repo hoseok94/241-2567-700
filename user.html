@@ -3,13 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User List</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="index2(update).html">Back to register</a>
-    User management page
-    <div id="user"></div>
+
+<div class="container">
+    <h1 class="header">User List</h1>
+
+    <!-- Search bar -->
+    <input type="text" id="search" class="search-bar" placeholder="🔍 ค้นหาผู้ใช้...">
+
+    <!-- Table for user data -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="user-list">
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Button to go back to the homepage -->
+    <div class="center">
+        <a href="index2(update).html" class="back-btn">← กลับไปหน้าแรก</a>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 <script src="user.js"></script>
+
 </body>
 </html>

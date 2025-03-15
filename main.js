@@ -112,7 +112,6 @@ let student = {
     grade : 'A' 
 };
     console.log(student);
-=======
 //string ,number ,booliean Object , array
 /*
 //string
@@ -226,4 +225,3 @@ let student = {
     grade : 'A' 
 };
     console.log(student);
->>>>>>> d4ce908 (Add files via upload)
