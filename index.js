@@ -137,3 +137,16 @@ const submitData = async () => {
         messageDOM.className = 'message danger';
     }
 }
+document.getElementById("go-to-user").addEventListener("click", function(event) {
+    event.preventDefault(); // ป้องกันการเปลี่ยนหน้าไปก่อน
+    let sushi = document.getElementById("sushi");
+
+    // แสดงซูชิและเริ่มกลิ้ง
+    sushi.style.display = "block";
+    sushi.style.animation = "roll 1s linear forwards";
+
+    // รอ 1 วินาที (ตามเวลา animation) แล้วเปลี่ยนหน้า
+    setTimeout(() => {
+        window.location.href = "user.html";
+    }, 500);
+});

@@ -3,20 +3,70 @@
   src: url('./Kanit/Kanit-Regular.ttf');
 }
 
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('icon/fall.gif');
+  background-size: cover; /* ปรับขนาดให้พอดี */
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
 body {
   font-family: 'Kanit';
   font-size: 14px;
 }
+
+.sushi {
+  width: 750px;
+  height: 750px;
+  background-image: url('icon/sushideng.gif');
+  background-size: cover;
+  position: fixed;
+  top: 10%;
+  left: -100px;
+  display: none;
+  z-index: 99;
+  
+}
+
+@keyframes roll {
+  0% {
+      transform: rotate(0deg);
+      left: -100px;
+  }
+  50% {
+      transform: rotate(360deg);
+  }
+  100% {
+      transform: rotate(720deg);
+      left: 100%;
+  }
+}
+
 
 .container {
   width: 100%;
   max-width: 640px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 5px solid pink;
+  box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.5);
   border-radius: 10px;
   background-color: #f9f9f9;
   box-sizing: border-box; /* ทำให้กรอบยืดหดได้ตามขนาดหน้าจอ */
+  position: relative; /* กำหนด relative ที่กรอบ */
+  z-index: 1;
+}
+.tempura-sticker {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 100px;
 }
 .checkbox-container {
   display: flex;
