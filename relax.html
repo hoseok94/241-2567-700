@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxing Website</title>
+    <link rel="stylesheet" href="styles_\relax.css">
+</head>
+<body>
+    <!-- พื้นหลัง Animation -->
+    <div class="background-animation"></div>
+    
+    <!-- ตัวละครที่สามารถเดินได้ -->
+    <img src="icon/junimo.gif" id="character" class="character">
+    
+    <!-- ตัวจับเวลาอ่านหนังสือ -->
+    <div class="timer-container">
+        <h2>⏳ จับเวลาอ่านหนังสือ</h2>
+        <p id="timer">00:00:00</p>
+        <button onclick="startTimer()">เริ่ม</button>
+        <button onclick="stopTimer()">หยุด</button>
+        <button onclick="resetTimer()">รีเซ็ต</button>
+    </div>
+
+    <!-- ปุ่มกลับไปหน้าแรก -->
+    <div class="center">
+        <a href="index2(update).html" class="back-btn">← กลับไปหน้าแรก</a>
+    </div>
+
+    <!-- เชื่อมโยงสคริปต์ -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+    <script src="navbar.js"></script>
+</body>
+</html>
+

@@ -10,11 +10,51 @@
     <div class="background-animation"></div>
     <a href="user.html" id="go-to-user" class="back-btn">Go to User Management</a>
     <div class="sushi" id="sushi"></div>
-    <div class="container">
-            <img src="icon/tempura.webp" class="tempura-sticker" alt="tempura">
-      <div class="header">
-          Register Form
-      </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="menu" id="menu">
+            <a href="index2(update).html" class="a">🏠 Home</a>
+            <a href="user.html" class="a">👤 User Management</a>
+            <a href="relax.html" class="a">🕒 Relax Timing</a>
+            <a href="profile.html" class="a">📄 Profile</a>
+            <a href="javascript:void(0)" onclick="logout()" class="logout-btn">🚪 Logout</a>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="container" id="loginForm">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="email">
+        <div class="password-container">
+            <input type="password" id="loginPassword" placeholder="password">
+            <span class="eye-icon" onclick="togglePassword('loginPassword', this)">👁️</span>
+        </div>
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <a href="javascript:void(0)" onclick="toggleForm('registerForm')">Register here</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div class="container" id="registerForm" style="display: none;">
+        <h2>Register</h2>
+        <input type="email" id="email" placeholder="email">
+        <div class="password-container">
+            <input type="password" id="password" placeholder="password">
+            <span class="eye-icon" onclick="togglePassword('password', this)">👁️</span>
+        </div>
+        <div class="password-container">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <span class="eye-icon" onclick="togglePassword('confirmPassword', this)">👁️</span>
+        </div>
+        <button onclick="register()">Register</button>
+        <p>Already have an account? <a href="javascript:void(0)" onclick="toggleForm('loginForm')">Login here</a></p>
+    </div>
+
+    <!-- Profile Form -->
+    <div class="container" id="profileForm" style="display: none;">
+        <img src="icon/tempura.webp" class="tempura-sticker" alt="tempura">
+        <div class="header">Register Form</div>
       <div class="flex form-input">
           <div class="header-form">ชื่อ</div>
           <input class="form" name="firstname" type="text">
