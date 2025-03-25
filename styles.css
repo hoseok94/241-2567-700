@@ -230,13 +230,16 @@ tr:hover {
   font-size: 16px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 .back-btn:hover {
   background-color: #45a049;
 }
 
-.back-btn {
+.bt-back {
   display: inline-block;
   padding: 8px 16px;
   margin-top: 20px;
@@ -266,3 +269,78 @@ tr:hover {
     font-size: 14px;
   }
 }
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.navbar .hamburger {
+  position: fixed;
+  top: 20px; 
+  left: 20px;
+  font-size: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(194, 107, 14);
+  transition: color 0.3s ease;
+  z-index: 100; /* ทำให้ปุ่มอยู่เหนือเมนู */
+}
+
+.navbar .hamburger:hover {
+  color: #f4a261; 
+}
+
+.menu {
+  position: fixed;
+  top: 60px; /* เพิ่มระยะห่างให้เมนูอยู่ต่ำลงจาก hamburger */
+  left: 20px; /* จัดให้อยู่ในแนวเดียวกับ hamburger */
+  width: auto;
+  display: none; /* เริ่มต้นซ่อนเมนู */
+  background-color: rgb(255, 217, 168); 
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 99; /* ให้อยู่ใต้ hamburger */
+}
+
+.menu.show {
+  display: block; /* แสดงเมนูเมื่อเปิด */
+}
+
+.menu a {
+  color: rgb(245, 120, 18);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px; 
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: rgb(255, 181, 101);
+}
+.logout-btn {
+  color: rgb(245, 120, 18);
+  text-decoration: none;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: rgb(255, 181, 101);
+}
+
+

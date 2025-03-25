@@ -1,0 +1,88 @@
+/* พื้นฐานสำหรับหน้าโปรไฟล์ */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #faf3e0; /* สีพื้นหลังอบอุ่น */
+    color: #3e3e3e; /* สีข้อความหลัก */
+}
+
+/* Container หลัก */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* หัวข้อหลัก */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #8a4f37; /* สีส้มอ่อน */
+}
+
+/* ส่วนของข้อมูลโปรไฟล์ */
+.profile-info {
+    background-color: #fffaf4; /* สีพื้นหลังอ่อนๆ */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid #f7d9a0; /* ขอบสีทองอ่อน */
+}
+
+/* รายการข้อมูล */
+.info-item {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+/* Label */
+.info-item label {
+    font-weight: bold;
+    color: #6e4b3a; /* สีน้ำตาลเข้ม */
+    margin-right: 10px;
+}
+
+/* ข้อมูลที่แสดง */
+.info-item span, .info-item p {
+    color: #8a5d45; /* สีน้ำตาลอ่อน */
+    font-size: 1.1em;
+}
+
+/* รายการงานอดิเรก */
+#interests {
+    color: #d57a4d; /* สีส้มอมแดง */
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffbfa2; /* สีพาสเทลหวาน */
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* Message */
+.message {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
