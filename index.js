@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'http://localhost:8001';
 let mod = 'CREATE';
 let selectedId = '';
 
@@ -62,23 +62,19 @@ function toggleForm(formId) {
 }
 
 const register = async () => {
-    let emailDOM = document.querySelector('#email');
-    let passwordDOM = document.querySelector('#password');
-    let confirmPasswordDOM = document.querySelector('#confirmPassword');
+    let email = document.querySelector('#email').value;
+    let password = document.querySelector('#password').value;
+    let confirmPassword = document.querySelector('#confirmPassword').value;
     let messageDOM = document.getElementById('message');
 
-    if (passwordDOM.value !== confirmPasswordDOM.value) {
+    if (password !== confirmPassword) {
         messageDOM.innerText = "รหัสผ่านไม่ตรงกัน";
         messageDOM.className = 'message danger';
         return;
     }
 
     try {
-        await axios.post(`${BASE_URL}/users`, {
-            email: emailDOM.value,
-            password: passwordDOM.value,
-        });
-
+        await axios.post(`${BASE_URL}/users`, { email, password });
         toggleForm('profileForm'); // ไปหน้ากรอกข้อมูลส่วนตัว
     } catch (error) {
         messageDOM.innerText = "เกิดข้อผิดพลาดในการสมัครสมาชิก";
@@ -87,29 +83,17 @@ const register = async () => {
 };
 
 const login = async () => {
-    let emailDOM = document.querySelector('#loginEmail');
-    let passwordDOM = document.querySelector('#loginPassword');
+    let email = document.querySelector('#loginEmail').value;
+    let password = document.querySelector('#loginPassword').value;
     let messageDOM = document.getElementById('message');
 
     try {
-        // ส่งข้อมูลอีเมลและรหัสผ่านไปยัง API
-        const response = await axios.post(`${BASE_URL}/users/login`, {
-            email: emailDOM.value,
-            password: passwordDOM.value,
-        });
-
-        const userId = response.data.id; // รับ userId จากเซิร์ฟเวอร์
-
-        // เก็บ userId ไว้ใน localStorage เพื่อใช้ในภายหลัง
-        localStorage.setItem('userId', userId);
-
-        // แสดงข้อความสำเร็จและไปยังหน้าโปรไฟล์
+        const response = await axios.post(`${BASE_URL}/users/login`, { email, password });
+        localStorage.setItem('userId', response.data.user.id);
         messageDOM.innerText = "เข้าสู่ระบบสำเร็จ";
         messageDOM.className = 'message success';
         window.location.href = "profile.html";
     } catch (error) {
-        // จัดการข้อผิดพลาด
-        console.error('Error during login:', error.message);
         messageDOM.innerText = "อีเมลหรือรหัสผ่านไม่ถูกต้อง";
         messageDOM.className = 'message danger';
     }

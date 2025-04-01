@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relaxing Website</title>
-    <link rel="stylesheet" href="styles_\relax.css">
+    <link rel="stylesheet" href="stylesrelax.css">
 </head>
 <body>
+    <div class="navbar">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="menu" id="menu">
+            <a href="index2(update).html" class="a">🏠 Home</a>
+            <a href="user.html" class="a">👤 User Management</a>
+            <a href="relax.html" class="a">🕒 Relax Timing</a>
+            <a href="profile.html" class="a">📄 Profile</a>
+            <a href="javascript:void(0)" onclick="logout()" class="logout-btn">🚪 Logout</a>
+        </div>
+    </div>
     <!-- พื้นหลัง Animation -->
     <div class="background-animation"></div>
     
@@ -30,7 +40,7 @@
     <!-- เชื่อมโยงสคริปต์ -->
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="index.js"></script>
-    <script src="navbar.js"></script>
+    <script src="relax.js"></script>
 </body>
 </html>
 
